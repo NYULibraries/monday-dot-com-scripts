@@ -1,0 +1,17 @@
+{
+  "name": "monday-dot-com-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "get-info-boxes-for-board.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.11"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
