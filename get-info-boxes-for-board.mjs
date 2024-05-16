@@ -93,7 +93,9 @@ async function getQueryResults( query ) {
     const response = await getResponseJson( MONDAY_COM_API_URL, init );
 
     // Get items for this page
-    const itemsPage = response.data.boards[ 0 ].items_page;
+    const itemsPage = response.data.boards ?
+                      response.data.boards[ 0 ].items_page :
+                      response.data.next_items_page;
     return {
         itemIds : itemsPage.items.map( item => item.id ),
         cursor  : itemsPage.cursor,
@@ -126,10 +128,6 @@ async function initializePlaywright( timeoutOption ) {
     const timeout = timeoutOption || DEFAULT_TIMEOUT;
 
     page.setDefaultTimeout( timeout );
-}
-
-function writeCollaborationBoxesFile( json ) {
-
 }
 
 async function main() {
